@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>-</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div id="card">
+
+            <div id="preview-container" class="card-part">
+                <canvas id="preview" width="0" height="0"></canvas>
+                <input id="fileupload" class="hide" type="file" accept="image/png, image/jpeg">
+                <label id="button-upload" for="fileupload">Upload image</label>
+            </div>
+
+            <div id="settings-container" class="card-part">
+                <span class="setting-title">Shift into red</span>
+                <input id="red" class="setting" type="range" min="0" max="100" value="0">
+                <span class="setting-title">Contrast increase</span>
+                <input id="contrast" class="setting" type="range" min="0" max="100" value="0">
+                <span class="setting-title">Crispyness</span>
+                <input id="crispyness" class="setting" type="range" min="0" max="100" value="0">
+
+                <button id="button-download">Download</button>
+            </div>
+
+        </div>
+
+        <img id="image" src="#" class="hide">
+        <a id="download" class="hide" download="" href="#"></a>
+
+    </body>
+</html>

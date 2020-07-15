@@ -1,0 +1,151 @@
+:root {
+    --preview-width: 50%;
+    --preview-height-mobile: 40%;
+    --card-part-padding: 20px;
+}
+
+* {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    color: rgb(25, 25, 25);
+}
+
+body {
+    background: rgb(245, 245, 245);
+}
+
+#card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
+    width: 1300px;
+    max-width: calc(100% - 30px);
+    max-height: calc(100% - 30px);
+    padding: 0;
+    box-sizing: border-box;
+
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 25px rgba(0,0,0, 0.15);
+}
+
+.card-part {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: var(--card-part-padding);
+    box-sizing: border-box;
+}
+#preview-container {
+    width: var(--preview-width);
+}
+#settings-container {
+    width: calc(100% - var(--preview-width));
+    overflow-y: auto;
+}
+
+
+#preview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: calc(100% - 2 * var(--card-part-padding));
+    max-height: calc(100% - 2 * var(--card-part-padding));
+}
+
+
+.hide {
+    display: none;
+}
+
+label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background: transparent;
+    border-radius: 5px;
+    padding: 7px 15px;
+    cursor: pointer;
+    color: rgb(150, 150, 150);
+    transition: all 0.05s ease;
+}
+label:hover {
+    color: inherit;
+    background: rgba(0,0,0, 0.075);
+}
+label:active {
+    color: inherit;
+    background: rgba(0,0,0, 0.15);
+}
+
+#button-upload {
+    position: absolute;
+    left: 50%;
+    bottom: calc(var(--card-part-padding));
+    transform: translate(-50%, 0);
+    box-sizing: border-box;
+    width: calc(100% - 2 * var(--card-part-padding));
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#settings-container * {
+    display: block;
+}
+
+#settings-container input[type="range"] {
+    width: 100%;
+}
+
+.setting-title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#button-download {
+    background: rgb(50, 150, 255);
+    border-radius: 5px;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: all 0.05s ease;
+    border: none;
+    color: white;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+#button-download:hover {
+    background: rgb(95, 183, 255);
+}
+#button-download:active {
+    background: rgb(47, 119, 226);
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+    #card {
+        height: calc(100% - 30px);
+    }
+    .card-part {
+        float: left;
+        height: 50%;
+    }
+    #preview-container {
+        height: var(--preview-height-mobile);
+        width: 100%;
+    }
+    #settings-container {
+        height: calc(100% - var(--preview-height-mobile));
+        width: 100%;
+    }
+
+}
