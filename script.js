@@ -11,7 +11,7 @@ var setting_red;
 var setting_contrast;
 var setting_crispyness;
 
-var filename = "Image";
+var filename = undefined;
 
 window.addEventListener("load", function() {
     fileupload = document.getElementById("fileupload");
@@ -47,10 +47,12 @@ window.addEventListener("load", function() {
     });
 
     button_download.addEventListener("click", function() {
-        var downloadURL = preview.toDataURL();
-        download.href = downloadURL;
-        download.download = filename;
-        download.click();
+        if (filename != undefined) {
+            var downloadURL = preview.toDataURL();
+            download.href = downloadURL;
+            download.download = filename;
+            download.click();
+        }
     });
 
     for (var i = 0; i < settings.length; i ++) {
